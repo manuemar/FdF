@@ -6,10 +6,11 @@
 /*   By: manuemar <manuemar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 04:49:40 by manuemar          #+#    #+#             */
-/*   Updated: 2023/10/24 18:28:34 by manuemar         ###   ########.fr       */
+/*   Updated: 2023/11/02 18:31:44 by manuemar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
 #include "fdf.h"
 
 void	free_map(t_map map)
@@ -41,7 +42,7 @@ void	save_map(t_map *map, char *line, size_t j)
 	splitted_line = ft_split(line, ' ');
 	while (splitted_line[map->width])
 		map->width++;
-	map->map[j] = malloc(sizeof(int) * map->width);
+	map->map[j] = malloc(sizeof(int *) * map->width);
 	i = 0;
 	while (splitted_line[i])
 	{
@@ -58,12 +59,13 @@ void	count_heigth(t_map *map, char *str)
 	char	*file_line;
 	int	fd;
 
-	map->heigth = 1;
+	map->heigth = 0;
 	fd = open(str, O_RDONLY);
 	file_line = get_next_line(fd);
 	while (file_line)
 	{
 		map->heigth++;
+		free(file_line);
 		file_line = get_next_line(fd);
 	}
 	close(fd);
@@ -76,7 +78,7 @@ void	read_map(t_map *map, char *str)
 	size_t	j;
 
 	count_heigth(map, str);
-	map->map = malloc(sizeof(char *) * (map->heigth));
+	map->map = malloc(sizeof(int **) * (map->heigth));
 	j = 0;
 	fd = open(str, O_RDONLY);
 	file_line = get_next_line(fd);
@@ -88,6 +90,8 @@ void	read_map(t_map *map, char *str)
 		file_line = get_next_line(fd);
 	}
 }
+
+*/
 
 //Necesito calcular columnas (supongo que depende de la cantidad de veces que
 //	reserve el split se puede tomar el valor de ahí, por lo que tengo que

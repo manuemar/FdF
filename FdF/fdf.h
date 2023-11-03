@@ -6,7 +6,7 @@
 /*   By: manuemar <manuemar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 20:43:22 by manuemar          #+#    #+#             */
-/*   Updated: 2023/10/19 22:58:16 by manuemar         ###   ########.fr       */
+/*   Updated: 2023/11/02 18:12:35 by manuemar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ typedef struct s_map
 	int	width;
 	int	max_z;
 	int	min_z;
-	int	**map;
+	int	***map;
 }	t_map;
 
 //lines.c
