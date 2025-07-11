@@ -6,11 +6,10 @@
 /*   By: manuemar <manuemar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 20:55:03 by manuemar          #+#    #+#             */
-/*   Updated: 2023/10/20 02:41:05 by manuemar         ###   ########.fr       */
+/*   Updated: 2025/07/09 16:21:29 by manuemar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mlx.h"
 #include "fdf.h"
 #include <stdlib.h>
 
@@ -31,7 +30,7 @@ int	ft_key_manage(int key, t_window *data)
 		close_window();
 	return (0);
 }
-
+/**/
 int	main(int argc, char **argv)
 {
 	t_window	data;
@@ -44,10 +43,10 @@ int	main(int argc, char **argv)
 	data.win_ptr = mlx_new_window(data.mlx_ptr, 900, 690, "FdF");
 	read_map(&map, argv[1]);
 	//EMPEZAR A HACER FUNCIÓN CON BUCLE PARA DIBUJAR LAS LÍNEAS
-	line.x1 = 75;
-	line.y1 = 116;
-	line.x2 = 686;
-	line.y2 = 622;
+	line.x1 = 0;
+	line.y1 = 0;
+	line.x2 = 500;
+	line.y2 = 1000;
 	bresenham_line(&data, &line); //ESTO IRA EN FUNCION A PARTE
 	/*line.x1 = 900 - 75;
 	line.y1 = 116;
